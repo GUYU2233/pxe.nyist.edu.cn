@@ -21,7 +21,7 @@ jobs:
     - name: Build netboot.xyz
       run: |
         chmod +x script/build_and_package.sh
-        ./script/build_and_package.sh
+        sudo ./script/build_and_package.sh
     
     - name: Upload artifact
       uses: actions/upload-artifact@v4
