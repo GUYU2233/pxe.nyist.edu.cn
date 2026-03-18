@@ -36,7 +36,7 @@ release_overrides:
   almalinux:
     mirror: "https://mirror.nyist.edu.cn/almalinux"
   
-  alpine:
+  alpinelinux:
     mirror: "https://mirror.nyist.edu.cn/alpine"
   
   archlinux:
