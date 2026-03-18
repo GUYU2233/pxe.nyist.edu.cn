@@ -14,9 +14,9 @@ echo "创建临时输出目录..."
 sudo mkdir -p /var/www/html
 sudo chown -R $(whoami):$(whoami) /var/www/html
 
-# 运行 Ansible 构建
+# 运行 Ansible 构建（只生成菜单，不生成磁盘镜像）
 echo "开始编译 netboot.xyz..."
-ansible-playbook -i inventory site.yml -e "generate_signatures=false"
+ansible-playbook -i inventory site.yml -e "generate_signatures=false generate_disks=false"
 
 # 复制构建产物
 echo "复制构建产物..."
