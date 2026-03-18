@@ -9,6 +9,11 @@ echo "清理旧的构建文件..."
 rm -rf /tmp/netbootxyz-build
 mkdir -p /tmp/netbootxyz-build
 
+# 创建临时输出目录
+echo "创建临时输出目录..."
+sudo mkdir -p /var/www/html
+sudo chown -R $(whoami):$(whoami) /var/www/html
+
 # 运行 Ansible 构建
 echo "开始编译 netboot.xyz..."
 ansible-playbook -i inventory site.yml
