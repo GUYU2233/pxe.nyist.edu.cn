@@ -16,7 +16,7 @@ sudo chown -R $(whoami):$(whoami) /var/www/html
 
 # 运行 Ansible 构建
 echo "开始编译 netboot.xyz..."
-ansible-playbook -i inventory site.yml
+ansible-playbook -i inventory site.yml -e "generate_signatures=false"
 
 # 复制构建产物
 echo "复制构建产物..."
