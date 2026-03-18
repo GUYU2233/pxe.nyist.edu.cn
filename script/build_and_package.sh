@@ -14,9 +14,15 @@ echo "创建临时输出目录..."
 sudo mkdir -p /var/www/html
 sudo chown -R $(whoami):$(whoami) /var/www/html
 
-# 运行 Ansible 构建（只生成菜单，不生成磁盘镜像）
+# 下载 iPXE CA 证书
+echo "下载 iPXE CA 证书..."
+mkdir -p script/ssl
+curl -o script/ssl/ca-ipxe-org.crt https://ca.ipxe.org/ca.crt
+echo "iPXE CA 证书已下载"
+
+# 运行 Ansible 构建
 echo "开始编译 netboot.xyz..."
-ansible-playbook -i inventory site.yml -e "generate_signatures=false generate_disks=false"
+ansible-playbook -i inventory site.yml -e "generate_signatures=false"
 
 # 复制构建产物
 echo "复制构建产物..."
