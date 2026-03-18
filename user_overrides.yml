@@ -4,9 +4,11 @@ cert_dir: "{{ playbook_dir }}/script/ssl"
 cert_file_filename: "FullSSL.crt"
 codesign_cert_filename: "FullSSL.crt"
 codesign_key_filename: "SSL.key"
+ipxe_ca_filename: "ca-ipxe-org.crt"
+trust_files: "{{ playbook_dir }}/script/ssl/ca-ipxe-org.crt"
 
 # Enable signature generation
-generate_signatures: true
+generate_signatures: false
 
 # set desired site name
 site_name: "南阳理工学院 PXE 启动服务"
